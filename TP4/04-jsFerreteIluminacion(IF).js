@@ -16,41 +16,33 @@ function CalcularPrecio() {
     let impuesto;
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marca = document.getElementById("Marca").value;
-
     if (cantidad >= 6) {
         precioConDescuento = (cantidad * (precio - precio * 0.5));
-        document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
     }
     if (cantidad == 5) {
         if (marca == "ArgentinaLuz") {
             precioConDescuento = (cantidad * (precio - precio * 0.4));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         } else {
             precioConDescuento = (cantidad * (precio - precio * 0.3));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         }
     }
     if (cantidad == 4) {
         if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
             precioConDescuento = (cantidad * (precio - precio * 0.25));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         } else {
             precioConDescuento = (cantidad * (precio - precio * 0.2));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         }
     }
     if (cantidad == 3) {
         if (marca == "ArgentinaLuz") {
             precioConDescuento = (cantidad * (precio - precio * 0.15));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         } else if (marca == "FelipeLamparas") {
             precioConDescuento = (cantidad * (precio - precio * 0.1));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         } else {
             precioConDescuento = (cantidad * (precio - precio * 0.05));
-            document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
         }
     }
+    document.getElementById("txtIdprecioDescuento").value = precioConDescuento;
     if (cantidad == 1 || cantidad == 2) {
         precio = precio * cantidad;
         document.getElementById("txtIdprecioDescuento").value = precio;
